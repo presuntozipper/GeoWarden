@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GeoWarden</string>
+    <string name="title_activity_home_view">homeView</string>
+</resources>
