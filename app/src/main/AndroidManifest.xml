@@ -18,6 +18,12 @@
         android:theme="@style/Theme.GeoWarden"
         tools:targetApi="31">
         <activity
+            android:name=".ui.screen.configuration.configurationView"
+            android:exported="false"
+            android:label="@string/title_activity_configuration_view"
+            android:theme="@style/Theme.GeoWarden" />
+
+        <activity
             android:name=".ui.screen.home.homeView"
             android:exported="false"
             android:label="@string/title_activity_home_view"
