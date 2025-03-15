@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.easy.GeoWarden" />
+                  <option name="mobileSdkAppId" value="1:529189821997:android:663be783bd6009725f22a4" />
+                  <option name="projectId" value="geo-warden-app" />
+                  <option name="projectNumber" value="529189821997" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

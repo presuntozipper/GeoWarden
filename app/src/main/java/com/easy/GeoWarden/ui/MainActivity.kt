@@ -30,6 +30,9 @@ class MainActivity : ComponentActivity() {
         tag(TAG).w("")
         enableEdgeToEdge()
         setContent{
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = "") { }
+
             Navigate()
         }
 
@@ -38,7 +41,8 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun Navigate(){
         val navController = rememberNavController()
-        NavHost(navController = navController, startDestination = "splash") {
+        NavHost(navController = navController, startDestination = "splash")
+        {
             composable(route = "splash"){InitialScreen(navController)}
             composable(route = "home"){ HomeView() }
         }
@@ -61,5 +65,8 @@ class MainActivity : ComponentActivity() {
 
 
     }
+
+
+
 
 }
