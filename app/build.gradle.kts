@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     kotlin("plugin.serialization") version "2.0.21"
     id("com.google.gms.google-services")
+   // id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -42,10 +43,11 @@ android {
 }
 
 dependencies {
-    val nav_version = "2.8.9"
-    implementation(libs.firebase.bom)
+  //  implementation(libs.kotlinx.serialization.core)
+    implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
-
+    implementation(libs.firebase.auth)
+    implementation(libs.play.services.auth)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.timber)
     implementation (libs.gson)

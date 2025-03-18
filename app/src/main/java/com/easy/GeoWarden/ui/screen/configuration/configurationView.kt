@@ -24,7 +24,6 @@ class configurationView : ComponentActivity() {
 
 @Composable
 fun ConfigurationView(){
-
     Box( modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
         Text("Tela de configurações")
     }
