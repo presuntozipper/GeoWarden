@@ -1,9 +1,7 @@
-## Projeto em desenvolvimento 
-<br>
-## 
+## Projeto em desenvolvimento <br>
+
 O projeto tem como objetivo integrar Api da OpenWeather e utilizar da geolocalização fornecida pelo celular
 e uma rotina criada pelo usuario para criar uma notificação personalizada sobre os status diarios do Clima
-
 <div>
    <a href="https://openweathermap.org/api/" target="_blank"><img src="https://badgen.net/badge/OpenWeather/api/?color=cyan" target="_blank"></a>
  <br>
