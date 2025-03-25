@@ -1,4 +1,8 @@
-
+## Projeto em desenvolvimento 
+<br>
+## 
+O projeto tem como objetivo integrar Api da OpenWeather e utilizar da geolocalização fornecida pelo celular
+e uma rotina criada pelo usuario para criar uma notificação personalizada sobre os status diarios do Clima
 
 
 
