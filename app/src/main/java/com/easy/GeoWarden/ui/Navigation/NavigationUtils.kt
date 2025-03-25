@@ -10,7 +10,7 @@ sealed class  Dest{
     @Serializable
     data object RegisterScreen:Dest()
     @Serializable
-    data object ConfigurationScreen:Dest()
+    data object ConfigurationView:Dest()
     @Serializable
     data object InitialScreen:Dest()
 
