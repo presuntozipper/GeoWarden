@@ -1,23 +1,29 @@
-package com.easy.GeoWarden.ui
+package com.easy.GeoWarden
 
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.ui.Modifier
+import com.easy.GeoWarden.repository.userData.FirebaseManager
 import com.easy.GeoWarden.ui.Navigation.NavigationGraph
 import timber.log.Timber
-import timber.log.Timber.Forest.tag
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.plant(Timber.DebugTree())
-        tag(TAG).w("INICIALIZADO")
+        Timber.Forest.plant(Timber.DebugTree())
+        Timber.Forest.tag(ContentValues.TAG).w("INICIALIZADO")
         enableEdgeToEdge()
-        setContent{
-            NavigationGraph(modifier = Modifier)
+        setContent {
+            val firebaseManager = FirebaseManager()
+
+            //firebaseManager.createNewUser("teste@gmail.com")
+
+
+            NavigationGraph(modifier = Modifier.Companion)
 
         }
 

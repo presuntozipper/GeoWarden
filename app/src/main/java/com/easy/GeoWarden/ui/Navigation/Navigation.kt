@@ -7,12 +7,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.easy.GeoWarden.ui.screen.InitialScreen
+import com.easy.GeoWarden.ui.screen.configuration.ConfigurationView
 import com.easy.GeoWarden.ui.screen.home.HomeView
 
 
 @Composable
 fun NavigationGraph(modifier: Modifier){
- val navController = rememberNavController()
+    val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = Dest.InitialScreen) {
 
@@ -25,13 +26,17 @@ fun NavigationGraph(modifier: Modifier){
 
 
         composable<Dest.HomeScreen>{
-            HomeView {navController.navigate(Dest.ConfigurationScreen)}
+            HomeView {
+                navController.navigate(Dest.ConfigurationView)
+            }
 
         }
         composable<Dest.LoginScreen>{
         }
         composable<Dest.RegisterScreen>{}
-        composable<Dest.ConfigurationScreen>{}
+        composable<Dest.ConfigurationView>{
+            ConfigurationView()
+        }
 
     }
 

@@ -11,12 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import com.easy.GeoWarden.R
 import kotlinx.coroutines.delay
-import kotlinx.serialization.Serializable
 
-@Serializable
-object InitialScreen
-@Serializable
-object HomeScreen
 
 @Composable
 fun InitialScreen(modifier: Modifier = Modifier, onNavigate: () -> Unit){
@@ -28,7 +23,7 @@ fun InitialScreen(modifier: Modifier = Modifier, onNavigate: () -> Unit){
         //inserir alguma animação para o splash screen
     }
     LaunchedEffect(key1 = true){
-        delay(2000)
+        delay(500)
         onNavigate()
     }
 

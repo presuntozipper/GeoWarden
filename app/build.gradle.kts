@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     kotlin("plugin.serialization") version "2.0.21"
     id("com.google.gms.google-services")
+    id("com.google.relay")version "0.3.12"
    // id("org.jetbrains.kotlin.plugin.serialization")
 }
 
@@ -43,9 +44,12 @@ android {
 }
 
 dependencies {
-  //  implementation(libs.kotlinx.serialization.core)
+
+    implementation("com.google.android.gms:play-services-maps:19.1.0")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+    implementation("com.google.firebase:firebase-firestore-ktx")
     implementation(libs.firebase.auth)
     implementation(libs.play.services.auth)
     implementation(libs.androidx.navigation.compose)
