@@ -10,6 +10,7 @@ navigationCompose = "2.8.8"
 navigationComposeVersion = "2.8.9"
 playServicesAuth = "21.3.0"
 retrofit = "2.11.0"
+roomversion = "2.6.1"
 timber = "5.0.1"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
@@ -29,6 +30,7 @@ androidx-navigation-compose-v289 = { module = "androidx.navigation:navigation-co
 androidx-navigation-dynamic-features-fragment = { module = "androidx.navigation:navigation-dynamic-features-fragment", version.ref = "navigationComposeVersion" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigationComposeVersion" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationComposeVersion" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomversion" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGsonVersion" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth = { module = "com.google.firebase:firebase-auth" }

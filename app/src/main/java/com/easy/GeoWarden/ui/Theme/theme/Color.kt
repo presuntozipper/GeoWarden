@@ -1,4 +1,4 @@
-package com.easy.GeoWarden.ui.screen.home.theme
+package com.easy.GeoWarden.ui.Theme.theme
 
 import androidx.compose.ui.graphics.Color
 

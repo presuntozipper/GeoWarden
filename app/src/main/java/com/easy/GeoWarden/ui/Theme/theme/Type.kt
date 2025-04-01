@@ -1,4 +1,4 @@
-package com.easy.GeoWarden.ui.screen.configuration.ui.theme
+package com.easy.GeoWarden.ui.Theme.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
