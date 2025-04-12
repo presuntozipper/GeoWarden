@@ -18,20 +18,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.easy.GeoWarden.R
-import com.easy.GeoWarden.ui.screen.home.AppName
-import com.easy.GeoWarden.ui.screen.home.version
+
 
 @Composable
 fun TopBar(onNavigate: () -> Unit, function: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .height(85.dp)
             .padding(16.dp)
-            .background(color = Color.White, shape = RoundedCornerShape(24.dp)),
-        verticalAlignment = Alignment.CenterVertically
+            .background(color = Color.White, shape = RoundedCornerShape(24.dp))
+        ,verticalAlignment = Alignment.CenterVertically
 
     ) {
         // Primeiro Box
@@ -51,13 +52,11 @@ fun TopBar(onNavigate: () -> Unit, function: () -> Unit) {
         Box(
             modifier = Modifier
                 .weight(1f)
-                .height(65.dp),
-
+                .height(65.dp)
             ) {
             Box(
                 modifier = Modifier.fillMaxWidth().height(30.dp),
                 contentAlignment = Alignment.Center
-
             ) {
                 Text(
                     text = AppName,
@@ -114,4 +113,10 @@ fun TopBar(onNavigate: () -> Unit, function: () -> Unit) {
         }
 
     }
+}
+
+@Preview
+@Composable
+fun previewTopBar(){
+    TopBar(onNavigate = {}, function = {})
 }

@@ -19,6 +19,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.easy.GeoWarden.ui.Theme.theme.DarkGrayBlue
+import com.easy.GeoWarden.ui.Theme.theme.Green
+import com.easy.GeoWarden.ui.Theme.theme.LightGrayGreen
+import com.easy.GeoWarden.ui.Theme.theme.Red
+import com.easy.GeoWarden.ui.Theme.theme.WhiteColor
+import com.easy.GeoWarden.ui.screen.home.components.Notification
 
 @Composable
 
@@ -49,12 +55,12 @@ fun ConfigScrollable(notification: MutableState<Boolean>){
                     checked = notification.value,
                     onCheckedChange = { notification.value = it },
                     colors = SwitchDefaults.colors(
-                        disabledCheckedThumbColor = Color(0xFFA09D9D),
-                        disabledCheckedTrackColor = Color(0xFF5C6661),
-                        checkedThumbColor = Color(0xFFFFFFFF),
-                        checkedTrackColor = Color(0xFF0DE03B),
-                        uncheckedThumbColor = Color(0xFFFF0000),
-                        uncheckedTrackColor = Color(0xFF514B6A),
+                        disabledCheckedThumbColor = Color(LightGrayGreen.value),
+                        disabledCheckedTrackColor = Color(LightGrayGreen.value),
+                        checkedThumbColor = Color(WhiteColor.value),
+                        checkedTrackColor = Color(Green.value),
+                        uncheckedThumbColor = Color(Red.value),
+                        uncheckedTrackColor = Color(DarkGrayBlue.value)
 
                         )
                 )
@@ -91,13 +97,12 @@ fun ConfigScrollable(notification: MutableState<Boolean>){
                     checked = notification.value,
                     onCheckedChange = { notification.value = it },
                     colors = SwitchDefaults.colors(
-                        disabledCheckedThumbColor = Color(0xFFA09D9D),
-                        disabledCheckedTrackColor = Color(0xFF5C6661),
-                        checkedThumbColor = Color(0xFFFFFFFF),
-                        checkedTrackColor = Color(0xFF0DE03B),
-                        uncheckedThumbColor = Color(0xFFFF0000),
-                        uncheckedTrackColor = Color(0xFF514B6A),
-
+                        disabledCheckedThumbColor = Color(LightGrayGreen.value),
+                        disabledCheckedTrackColor = Color(LightGrayGreen.value),
+                        checkedThumbColor = Color(WhiteColor.value),
+                        checkedTrackColor = Color(Green.value),
+                        uncheckedThumbColor = Color(Red.value),
+                        uncheckedTrackColor = Color(DarkGrayBlue.value)
                         )
                 )
             }
@@ -108,7 +113,7 @@ fun ConfigScrollable(notification: MutableState<Boolean>){
             ) {
 
                 Text(
-                    "Notificações",
+                    Notification,
                     fontSize = 16.sp,
                     color = Color.Black
                 )
