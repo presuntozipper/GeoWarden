@@ -22,18 +22,24 @@ val GradientColorLightBlueToDarkBlue = Brush.linearGradient(
 
 )
 
+
+
+
 val GradientColorLightBlueToDarkBlue2 = Brush.linearGradient(
     colors = listOf(Color(0xFF1A237E), Color(0xFF2561FF)),
     start = androidx.compose.ui.geometry.Offset(20f, 12f),
     end = androidx.compose.ui.geometry.Offset(20f, 300f)
-
 )
-
+val GradientCloudy = Brush.linearGradient(
+    colors = listOf(Color(0xFF5A5F6F), Color(0xFF1A237E)),
+    start = androidx.compose.ui.geometry.Offset(20f, 12f),
+    end = androidx.compose.ui.geometry.Offset(20f, 300f)
+)
 
 @Composable
 fun SetBackground() {
     Box(modifier = Modifier.fillMaxSize()
-        .background(brush = GradientColorLightBlueToDarkBlue2)
+        .background(brush = GradientCloudy)
     ){  }
 }
 

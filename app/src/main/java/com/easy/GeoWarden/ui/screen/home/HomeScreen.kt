@@ -6,12 +6,12 @@ package com.easy.GeoWarden.ui.screen.home
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -26,12 +26,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.easy.GeoWarden.ui.Theme.theme.GeoWardenTheme
 import com.easy.GeoWarden.ui.Theme.theme.GradientColorBlueToBlack
-import com.easy.GeoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue2
 import com.easy.GeoWarden.ui.Theme.theme.MarineBlue
 import com.easy.GeoWarden.ui.screen.home.components.CurrentLocation
 import com.easy.GeoWarden.ui.screen.home.components.CurrentLocationCard
+import com.easy.GeoWarden.ui.screen.home.components.LocationsCard
 import com.easy.GeoWarden.ui.screen.home.components.TopBar
-import com.easy.GeoWarden.ui.screen.home.components.UserAvatar
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -65,14 +64,17 @@ import com.easy.GeoWarden.ui.screen.home.components.UserAvatar
                 //Box Com card da localização atual
                 Box(modifier = Modifier.fillMaxWidth()){ CurrentLocationCard() }
                 //Criador de Coleção de Locais
-
+                Box(modifier = Modifier.fillMaxWidth(),
+                           contentAlignment = Alignment.Center){
+                    Text(text = "Localizações Favoritas", color = Color.White, fontSize = 20.sp)}
                 Box(modifier = Modifier
                     .fillMaxWidth()
-                    .height(300.dp)
-                    .padding(16.dp)
-                    .background(brush = GradientColorLightBlueToDarkBlue2
-                        , shape = RoundedCornerShape(24.dp))
+                    .height(320.dp)
+                    .padding(10.dp)
+                    .background(brush = GradientColorBlueToBlack
+                        , shape = RoundedCornerShape(22.dp))
                 ){
+                    
                     LazyVerticalGrid(
                         columns = object : GridCells {
                             override fun Density.calculateCrossAxisCellSizes(
@@ -84,11 +86,19 @@ import com.easy.GeoWarden.ui.screen.home.components.UserAvatar
                                 return listOf(firstColumn, secondColumn)
                             }
                         }
+                        , contentPadding = androidx.compose.foundation.layout.PaddingValues(4.dp)
                     ){
-                        item (span = { GridItemSpan(maxLineSpan) }){
-                            Text(text = "Localizações", color = Color.White, fontSize = 20.sp)
+                        items(6)
+                        {
+                            test ->
+                            //Apartir daqui codigo do card de locais
+                            Box(modifier = Modifier.fillMaxWidth()){
+                                LocationsCard()
+                                Spacer(modifier = Modifier.height(1.dp))
+                            }
+
                         }
-                        items(6){test -> UserAvatar() }
+
                     }
                 }
               }
