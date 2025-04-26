@@ -34,7 +34,7 @@ import com.easy.GeoWarden.ui.screen.home.components.SaveLoginButton
 import com.easy.GeoWarden.ui.screen.home.components.UserAvatar
 
 @Composable
-fun ConfigurationView() {
+fun ConfigurationView(onNavigate: () -> Unit) {
     val notification = remember { mutableStateOf(false) }
     val isLoggedIn = false
     val snackbarHostState = remember { SnackbarHostState() }
@@ -74,7 +74,7 @@ fun ConfigurationView() {
                                 Column(verticalArrangement = Arrangement.Center,
                                     horizontalAlignment = Alignment.CenterHorizontally)
                                 {
-                                    SaveLoginButton(snackbarHostState, scope, isLoggedIn)
+                                    SaveLoginButton(snackbarHostState, scope, isLoggedIn, onNavigate = {onNavigate()})
                                 }
 
                             }
@@ -128,5 +128,5 @@ fun ConfigurationView() {
 @Preview(showBackground = true)
 @Composable
  fun PreviewConfigurationView(){
-     ConfigurationView()
+     ConfigurationView(onNavigate = {})
  }

@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-auth")
     implementation(libs.androidx.room.runtime)
     implementation("com.google.android.gms:play-services-maps:19.1.0")
     implementation("com.google.android.gms:play-services-location:21.3.0")

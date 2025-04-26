@@ -10,7 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun SaveLoginButton(snackbarHostState: SnackbarHostState, scope: CoroutineScope, isLoggedIn: Boolean){
+fun SaveLoginButton(snackbarHostState: SnackbarHostState, scope: CoroutineScope, isLoggedIn: Boolean, onNavigate: () -> Unit){
 
 
         Button(onClick = {
@@ -22,7 +22,7 @@ fun SaveLoginButton(snackbarHostState: SnackbarHostState, scope: CoroutineScope,
                         duration = SnackbarDuration.Short
                     )
                     if (result == SnackbarResult.ActionPerformed) {
-                        //onLoginClick()
+                       onNavigate()
                     }
                 }
             } else {

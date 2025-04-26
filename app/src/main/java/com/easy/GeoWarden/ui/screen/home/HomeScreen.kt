@@ -53,7 +53,7 @@ import com.easy.GeoWarden.ui.screen.home.components.TopBar
                     .fillMaxWidth(1f)
                     .height(85.dp)
                     //Barra do topo da Aplicação
-                ) { TopBar(onNavigate = onNavigate){} }
+                ) { TopBar(onNavigate = onNavigate) }
                 //Box da localização atual
                 Box(modifier = Modifier
                     .fillMaxWidth()

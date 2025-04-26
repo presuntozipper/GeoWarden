@@ -25,7 +25,7 @@ import com.easy.GeoWarden.R
 
 
 @Composable
-fun TopBar(onNavigate: () -> Unit, function: () -> Unit) {
+fun TopBar(onNavigate: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -118,5 +118,5 @@ fun TopBar(onNavigate: () -> Unit, function: () -> Unit) {
 @Preview
 @Composable
 fun previewTopBar(){
-    TopBar(onNavigate = {}, function = {})
+    TopBar(onNavigate = {})
 }

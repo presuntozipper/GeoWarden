@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.easy.GeoWarden.ui.screen.InitialScreen
 import com.easy.GeoWarden.ui.screen.configuration.ConfigurationView
 import com.easy.GeoWarden.ui.screen.home.HomeView
+import com.easy.GeoWarden.ui.screen.loginScreen.LoginView
 
 
 @Composable
@@ -32,10 +33,16 @@ fun NavigationGraph(modifier: Modifier){
 
         }
         composable<Dest.LoginScreen>{
-        }
+            LoginView() {
+                navController.navigate(Dest.HomeScreen)
+                { popUpTo(Dest.LoginScreen) { inclusive = true } }
+            }
+    }
         composable<Dest.RegisterScreen>{}
         composable<Dest.ConfigurationView>{
-            ConfigurationView()
+            ConfigurationView(){
+                navController.navigate(Dest.HomeScreen)
+            }
         }
 
     }
