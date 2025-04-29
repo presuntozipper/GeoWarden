@@ -1,4 +1,4 @@
-package com.easy.geoWarden.ui.screen
+package com.easy.geoWarden.ui.screen.splashScreen
 
 
 import androidx.compose.foundation.Image

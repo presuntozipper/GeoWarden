@@ -32,15 +32,20 @@ import com.easy.geoWarden.ui.Theme.theme.MarineBlue
 import com.easy.geoWarden.ui.screen.configuration.components.ConfigScrollable
 import com.easy.geoWarden.ui.screen.configuration.components.SaveLoginButton
 import com.easy.geoWarden.ui.screen.home.components.UserAvatar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 @Composable
 fun ConfigurationView(onNavigate: () -> Unit) {
     val notification = remember { mutableStateOf(false) }
-    val isLoggedIn = false
+    val isLoggedIn:Boolean
+    val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
+    isLoggedIn = if (user == null){ false }
+    else{ true }
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
-    //Repensar como o snackbar deve ser implementado.1
+
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { paddingValues ->
