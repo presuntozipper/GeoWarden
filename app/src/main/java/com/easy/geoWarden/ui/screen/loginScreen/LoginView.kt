@@ -31,9 +31,10 @@ import com.easy.geoWarden.ui.Theme.theme.GeoWardenTheme
 import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue2
 import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue3
 
-@Composable
-    fun LoginView(viewModel: LoginViewModel = LoginViewModel()) {
 
+@Composable
+    fun LoginView(onNavigate:() -> Unit) {
+    val viewModel: LoginViewModel = LoginViewModel()
     var texto by remember { mutableStateOf("") }
     var passwd by remember { mutableStateOf("") }
     GeoWardenTheme {
@@ -122,5 +123,7 @@ import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue3
 @Preview(showBackground = true)
         @Composable
     fun  PreviewLogin() {
-        LoginView(viewModel = LoginViewModel())}
+        LoginView(
+            onNavigate = {}
+        )}
 

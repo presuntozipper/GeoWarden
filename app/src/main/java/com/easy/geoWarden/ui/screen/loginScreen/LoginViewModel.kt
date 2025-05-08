@@ -10,7 +10,7 @@ import timber.log.Timber
 
 class LoginViewModel:ViewModel() {
     private lateinit var auth: FirebaseAuth
-
+//Fazer uma busca antes para fazer o auto-Handling em uma unica tela de login para ver se o email ja esta cadastrado
     fun login(email: String, password: String) {
             auth = Firebase.auth
             auth.createUserWithEmailAndPassword(email, password)

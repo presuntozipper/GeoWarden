@@ -26,22 +26,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.easy.geoWarden.data.user.UserState.UserSession.isLoggedIn
 import com.easy.geoWarden.ui.Theme.theme.GeoWardenTheme
 import com.easy.geoWarden.ui.Theme.theme.GradientColorBlueToBlack
 import com.easy.geoWarden.ui.Theme.theme.MarineBlue
 import com.easy.geoWarden.ui.screen.configuration.components.ConfigScrollable
 import com.easy.geoWarden.ui.screen.configuration.components.SaveLoginButton
 import com.easy.geoWarden.ui.screen.home.components.UserAvatar
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-
 @Composable
-fun ConfigurationView(onNavigate: () -> Unit) {
-    val notification = remember { mutableStateOf(false) }
-    val isLoggedIn:Boolean
-    val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
-    isLoggedIn = if (user == null){ false }
-    else{ true }
+fun ConfigurationView(onNavigate:() -> Unit) {
+    val viewModel: ConfiguratinViewModel = viewModel()
+    val notification = remember { mutableStateOf(false)}
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
@@ -79,7 +75,8 @@ fun ConfigurationView(onNavigate: () -> Unit) {
                                 Column(verticalArrangement = Arrangement.Center,
                                     horizontalAlignment = Alignment.CenterHorizontally)
                                 {
-                                    SaveLoginButton(snackbarHostState, scope, isLoggedIn, onNavigate = onNavigate)
+                                    SaveLoginButton(snackbarHostState, scope, isLoggedIn, onNavigate)
+
                                 }
 
                             }

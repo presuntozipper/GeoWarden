@@ -23,6 +23,7 @@ fun SaveLoginButton(snackbarHostState: SnackbarHostState, scope: CoroutineScope,
                     )
                     if (result == SnackbarResult.ActionPerformed) {
                         onNavigate()
+
                     }
                 }
             } else {

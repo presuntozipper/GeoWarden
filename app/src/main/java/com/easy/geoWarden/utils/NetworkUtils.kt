@@ -1,4 +1,4 @@
-package com.easy.geoWarden.repository.api
+package com.easy.geoWarden.utils
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
