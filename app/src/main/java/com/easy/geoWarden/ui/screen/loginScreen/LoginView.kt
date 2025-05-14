@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.easy.geoWarden.data.repository.AuthRepository
 import com.easy.geoWarden.ui.Theme.theme.GeoWardenTheme
 import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue2
 import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue3
@@ -34,7 +35,10 @@ import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue3
 
 @Composable
     fun LoginView(onNavigate:() -> Unit) {
-    val viewModel: LoginViewModel = LoginViewModel()
+    val viewModel: LoginViewModel = LoginViewModel(
+        authRepository = AuthRepository()
+    )
+    val authState = viewModel.userState
     var texto by remember { mutableStateOf("") }
     var passwd by remember { mutableStateOf("") }
     GeoWardenTheme {
@@ -109,7 +113,7 @@ import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue3
 
                         )
                     Box(Modifier.padding(95.dp, 0.dp)) {
-                        Button(onClick = {viewModel.login(texto,passwd)}) {
+                        Button(onClick = { viewModel.Login(texto,passwd)}) {
                             Text(text = "Login")
                         }
                     }

@@ -27,7 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.easy.geoWarden.data.user.UserState.UserSession.isLoggedIn
+import com.easy.geoWarden.data.user.UserState
 import com.easy.geoWarden.ui.Theme.theme.GeoWardenTheme
 import com.easy.geoWarden.ui.Theme.theme.GradientColorBlueToBlack
 import com.easy.geoWarden.ui.Theme.theme.MarineBlue
@@ -37,6 +37,7 @@ import com.easy.geoWarden.ui.screen.home.components.UserAvatar
 @Composable
 fun ConfigurationView(onNavigate:() -> Unit) {
     val viewModel: ConfiguratinViewModel = viewModel()
+    val isLoggedIn = remember { mutableStateOf(UserState.UserSession) }
     val notification = remember { mutableStateOf(false)}
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()

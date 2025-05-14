@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Timber.Forest.plant(Timber.DebugTree())
         Timber.Forest.tag(ContentValues.TAG).w("INICIALIZADO \n" +
-                "USER_STATE-: ${UserState.UserSession.isLoggedIn}")
+                "USER_STATE-: ${UserState.UserSession}")
         enableEdgeToEdge()
         setContent {
 
