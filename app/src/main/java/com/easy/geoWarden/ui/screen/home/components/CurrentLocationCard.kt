@@ -21,11 +21,19 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.easy.GeoWarden.R
 import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue
+import com.easy.geoWarden.ui.screen.home.HomeViewModel
+import com.easy.geoWarden.utils.getTemp
 
 @Composable
-fun CurrentLocationCard(){
+fun CurrentLocationCard(location:android.location.Location?){
+    val viewModel: HomeViewModel = viewModel()
+
+    val lat = location?.latitude
+    val long = location?.longitude
+
 
     Box(modifier = Modifier
         .fillMaxWidth()
@@ -76,7 +84,7 @@ fun CurrentLocationCard(){
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
-                        Text(text = "0 " + "% ", color = Color.White, fontSize = 25.sp)
+                        Text(text = "${lat} " + "%${long} ", color = Color.White, fontSize = 25.sp)
                         Image(
                             imageVector = ImageVector.vectorResource(id = R.drawable.weather_hail),
                             contentDescription = "imagem",
@@ -94,5 +102,5 @@ fun CurrentLocationCard(){
 @Preview(showBackground = true)
 @Composable
 fun PreviewCurrentLocationCard(){
-    CurrentLocationCard()
+    CurrentLocationCard(location = null)
 }

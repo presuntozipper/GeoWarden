@@ -22,6 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.easy.GeoWarden.R
+import com.easy.geoWarden.utils.AppName
+import com.easy.geoWarden.utils.version
 
 
 @Composable

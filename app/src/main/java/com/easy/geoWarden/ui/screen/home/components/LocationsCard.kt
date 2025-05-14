@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.easy.GeoWarden.R
 import com.easy.geoWarden.ui.Theme.theme.GradientColorLightBlueToDarkBlue
+import com.easy.geoWarden.utils.getTemp
 
 @Composable
 fun LocationsCard(){

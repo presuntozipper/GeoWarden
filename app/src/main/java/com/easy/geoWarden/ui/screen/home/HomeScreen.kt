@@ -14,25 +14,30 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.easy.geoWarden.ui.Theme.theme.GeoWardenTheme
 import com.easy.geoWarden.ui.Theme.theme.GradientColorBlueToBlack
 import com.easy.geoWarden.ui.Theme.theme.MarineBlue
-import com.easy.geoWarden.ui.screen.home.components.CurrentLocation
 import com.easy.geoWarden.ui.screen.home.components.CurrentLocationCard
 import com.easy.geoWarden.ui.screen.home.components.LocalGrid
 import com.easy.geoWarden.ui.screen.home.components.TopBar
-
+import com.easy.geoWarden.utils.CurrentLocation
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
  fun HomeView( onNavigate:() -> Unit) {
+     val viewModel: HomeViewModel = viewModel()
+    val currentLocationData by viewModel.currentLocation.observeAsState()
+
   GeoWardenTheme {
     Box(Modifier
         .fillMaxSize()
@@ -59,12 +64,13 @@ import com.easy.geoWarden.ui.screen.home.components.TopBar
                     .fillMaxWidth()
                     .height(32.dp)
                     ,contentAlignment = Alignment.BottomCenter){
+
                     Text(text = CurrentLocation,color = Color.White, fontSize = 20.sp)
                 }
 
 
                 //Box Com card da localização atual
-                Box(modifier = Modifier.fillMaxWidth()){ CurrentLocationCard() }
+                Box(modifier = Modifier.fillMaxWidth()){ CurrentLocationCard(location = currentLocationData) }
 
 
                 //Criador de Coleção de Locais

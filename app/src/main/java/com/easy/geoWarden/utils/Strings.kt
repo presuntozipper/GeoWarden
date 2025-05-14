@@ -1,4 +1,4 @@
-package com.easy.geoWarden.ui.screen.home.components
+package com.easy.geoWarden.utils
 
 
 const val version:String = "V0.0.1"

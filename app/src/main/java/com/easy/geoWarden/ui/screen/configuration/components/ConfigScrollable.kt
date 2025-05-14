@@ -24,7 +24,7 @@ import com.easy.geoWarden.ui.Theme.theme.Green
 import com.easy.geoWarden.ui.Theme.theme.LightGrayGreen
 import com.easy.geoWarden.ui.Theme.theme.Red
 import com.easy.geoWarden.ui.Theme.theme.WhiteColor
-import com.easy.geoWarden.ui.screen.home.components.Notification
+import com.easy.geoWarden.utils.Notification
 
 @Composable
 

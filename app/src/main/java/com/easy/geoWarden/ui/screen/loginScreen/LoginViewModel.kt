@@ -1,29 +1,19 @@
 package com.easy.geoWarden.ui.screen.loginScreen
 
-import android.content.ContentValues.TAG
+
 import androidx.lifecycle.ViewModel
-import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
-import timber.log.Timber
+import androidx.lifecycle.viewModelScope
+import com.easy.geoWarden.data.repository.AuthRepository
+import com.easy.geoWarden.data.user.UserState
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 
-class LoginViewModel:ViewModel() {
-    private lateinit var auth: FirebaseAuth
+class LoginViewModel( private val authRepository: AuthRepository):ViewModel() {
 
-    fun login(email: String, password: String) {
-            auth = Firebase.auth
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener {
-                    task -> if (task.isSuccessful){
-                    Timber.tag("Login").d("Login Success")
-                    val user = auth.currentUser
-
-                    }
-                    else{
-                    Timber.tag(TAG).w(task.exception, "Falha na criação de usuario")}
-                }
-
+    val userState: StateFlow<UserState> = authRepository.userState
+    fun Login(email:String,password:String){
+        viewModelScope.launch { authRepository.login(email, password) }
     }
 
 }

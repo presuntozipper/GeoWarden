@@ -5,8 +5,8 @@ plugins {
     kotlin("plugin.serialization") version "2.0.21"
     id("com.google.gms.google-services")
     id("com.google.relay") version "0.3.12"
-   // id("io.kotzilla.kotzilla-plugin")
-    // id("org.jetbrains.kotlin.plugin.serialization")
+
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -45,7 +45,9 @@ android {
 }
 
 dependencies {
-
+    // https://mvnrepository.com/artifact/com.google.dagger/hilt-compiler
+    implementation("com.google.dagger:hilt-compiler:2.56.2")
+    implementation(libs.hilt.android)
     implementation(libs.google.firebase.auth)
     implementation(libs.androidx.room.runtime)
     implementation("com.google.android.gms:play-services-maps:19.2.0")
@@ -74,6 +76,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
     implementation(libs.androidx.navigation.dynamic.features.fragment)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -9,7 +9,6 @@ import androidx.navigation.compose.rememberNavController
 import com.easy.geoWarden.ui.screen.configuration.ConfigurationView
 import com.easy.geoWarden.ui.screen.home.HomeView
 import com.easy.geoWarden.ui.screen.loginScreen.LoginView
-import com.easy.geoWarden.ui.screen.loginScreen.LoginViewModel
 import com.easy.geoWarden.ui.screen.splashScreen.InitialScreen
 
 
@@ -34,7 +33,9 @@ fun NavigationGraph(modifier: Modifier){
 
         }
         composable<Dest.LoginView>{
-            LoginView(viewModel = LoginViewModel())
+            LoginView{
+                navController.navigate(Dest.HomeScreen)
+            }
 
             Dest.HomeScreen
         }
@@ -42,8 +43,9 @@ fun NavigationGraph(modifier: Modifier){
 
         composable<Dest.ConfigurationView>{
             ConfigurationView{
-                navController.navigate(Dest.LoginView)
-            }
+               navController.navigate(Dest.LoginView)}
+
+
         }
 
     }

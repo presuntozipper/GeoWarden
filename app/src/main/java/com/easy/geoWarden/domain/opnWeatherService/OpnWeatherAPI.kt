@@ -1,6 +1,8 @@
-package com.easy.geoWarden.repository.api
+package com.easy.geoWarden.domain.opnWeatherService
 
 import android.content.ContentValues.TAG
+import com.easy.geoWarden.data.remote.geocoderApi.GeocoderAPIService
+import com.easy.geoWarden.utils.NetworkUtils
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Response
@@ -8,7 +10,7 @@ import timber.log.Timber
 import timber.log.Timber.Forest.tag
 import java.util.concurrent.CountDownLatch
 
-class APICalls {
+class OpnWeatherAPI {
     fun locationDetails(){
         val retrofitClient = NetworkUtils.getRetrofitInstace("http://api.openweathermap.org/")
         val endpoint = retrofitClient.create(GeocoderAPIService::class.java)
